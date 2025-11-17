@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Kindle to Readwise Converter
-Convert Kindle HTML highlight exports to Readwise-compatible CSV format.
+Kindle to Readwise Converter - Backward Compatibility Wrapper
+
+This script is maintained for backward compatibility.
+For new installations, please use the package: pip install git+https://github.com/sameerbajaj/kindle-to-readwise
 
 Author: Sameer Bajaj
 Repository: https://github.com/sameerbajaj/kindle-to-readwise
@@ -9,13 +11,21 @@ License: MIT
 Version: 1.0.0
 """
 
-import re
-import os
 import sys
-import pandas as pd
-import requests
-from datetime import datetime
-from bs4 import BeautifulSoup, NavigableString
+
+# Try to use the installed package, fall back to bundled version
+try:
+    from kindle_to_readwise.__main__ import main
+    if __name__ == "__main__":
+        main()
+except ImportError:
+    # Package not installed, use the bundled code
+    import re
+    import os
+    import pandas as pd
+    import requests
+    from datetime import datetime
+    from bs4 import BeautifulSoup, NavigableString
 
 
 def fix_broken_html(source_html):
