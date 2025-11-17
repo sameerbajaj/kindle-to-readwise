@@ -1,20 +1,53 @@
 # Quick Start Guide
 
-Get started in 2 minutes! ⚡
+Get started in 30 seconds! ⚡
 
-## 1. Install Dependencies
+## Fastest Way (with uv)
 
-### Mac/Linux:
 ```bash
+# Install uv (one-time setup)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Run directly - no cloning needed!
+uvx --from git+https://github.com/sameerbajaj/kindle-to-readwise kindle-to-readwise your_book.html
+```
+
+**That's it!** Replace `your_book.html` with your actual file path.
+
+---
+
+## Alternative: Install Once, Use Forever
+
+```bash
+# Install with pipx
+brew install pipx  # or: pip install --user pipx
+pipx install git+https://github.com/sameerbajaj/kindle-to-readwise
+
+# Now run from anywhere, anytime
+kindle-to-readwise your_book.html
+```
+
+---
+
+## Manual Setup
+
+### 1. Install Dependencies
+
+**Mac/Linux:**
+```bash
+git clone https://github.com/sameerbajaj/kindle-to-readwise.git
+cd kindle-to-readwise
 ./setup.sh
 ```
 
-### Windows:
+**Windows:**
 ```bash
+git clone https://github.com/sameerbajaj/kindle-to-readwise.git
+cd kindle-to-readwise
 pip install -r requirements.txt
 ```
 
-### Manual:
+**Manual (all platforms):**
 ```bash
 pip3 install pandas beautifulsoup4 requests lxml
 ```

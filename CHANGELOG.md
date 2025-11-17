@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial release of Kindle to Readwise Converter
+- **Proper Python package structure with pyproject.toml**
+- **pip/pipx/uvx installability from GitHub**
+- **CLI entry point: `kindle-to-readwise` command**
 - HTML parser for Kindle Notebook exports
 - CSV export in Readwise-compatible format
 - Google Books API integration for metadata fetching

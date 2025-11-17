@@ -20,18 +20,56 @@ While Readwise supports Kindle imports, this tool gives you:
 
 ## Quick Start
 
-### Installation
+### ⚡ Super Quick (with uv - Recommended)
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/sameerbajaj/kindle-to-readwise.git
-   cd kindle-to-readwise
-   ```
+```bash
+# Install uv if you don't have it
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Run directly from GitHub (no cloning needed!)
+uvx --from git+https://github.com/sameerbajaj/kindle-to-readwise kindle-to-readwise your_book.html
+```
+
+### 🎯 Install with pipx (Persistent Installation)
+
+```bash
+# Install pipx if you don't have it
+brew install pipx  # macOS
+# or: pip install --user pipx
+
+# Install the tool
+pipx install git+https://github.com/sameerbajaj/kindle-to-readwise
+
+# Run from anywhere
+kindle-to-readwise your_book.html
+```
+
+### 📦 Install with pip (Traditional)
+
+```bash
+# Install directly from GitHub
+pip install git+https://github.com/sameerbajaj/kindle-to-readwise
+
+# Run
+kindle-to-readwise your_book.html
+```
+
+### 💻 Clone and Run (Development)
+
+```bash
+# Clone, install, and run
+git clone https://github.com/sameerbajaj/kindle-to-readwise.git
+cd kindle-to-readwise
+
+# Option A: With uv (fast!)
+uv run kindle_to_readwise.py your_book.html
+
+# Option B: With virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -e .
+kindle-to-readwise your_book.html
+```
 
 ### Usage
 
