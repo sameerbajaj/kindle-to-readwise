@@ -262,3 +262,7 @@ A: Yes! Edit the `convert_to_dataframe()` function to adjust the formatting.
 ---
 
 Made with ❤️ for book lovers and note-takers
+
+---
+
+Part of the open-source tools collection by [Sameer Bajaj](https://sameerbajaj.com). Learn more on the [project page](https://sameerbajaj.com/tools/kindle/).
