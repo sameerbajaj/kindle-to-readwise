@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "kindle-to-readwise"
@@ -27,7 +27,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -43,47 +42,13 @@ dependencies = [
     "lxml>=4.6.3",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0",
-    "pytest-cov>=3.0",
-    "black>=22.0",
-    "ruff>=0.1.0",
-]
-
 [project.urls]
 Homepage = "https://sameerbajaj.com/tools/kindle/"
-Documentation = "https://github.com/sameerbajaj/kindle-to-readwise#readme"
+Website = "https://sameerbajaj.com"
 Repository = "https://github.com/sameerbajaj/kindle-to-readwise"
-Issues = "https://github.com/sameerbajaj/kindle-to-readwise/issues"
-Changelog = "https://github.com/sameerbajaj/kindle-to-readwise/blob/main/CHANGELOG.md"
 
 [project.scripts]
-kindle-to-readwise = "kindle_to_readwise.__main__:main"
+kindle-to-readwise = "kindle_to_readwise:main"
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/kindle_to_readwise"]
-
-[tool.hatch.build.targets.sdist]
-include = [
-    "/src",
-    "/README.md",
-    "/LICENSE",
-    "/CHANGELOG.md",
-]
-
-[tool.black]
-line-length = 100
-target-version = ["py37"]
-
-[tool.ruff]
-line-length = 100
-target-version = "py37"
-select = ["E", "F", "I", "N", "W"]
-ignore = []
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
-python_classes = ["Test*"]
-python_functions = ["test_*"]
+[tool.setuptools]
+py-modules = ["kindle_to_readwise", "kindle_to_readwise_standalone"]
